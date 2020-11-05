@@ -38,6 +38,7 @@ func (t *Trie) Index(word Keyword) error {
 		if err == nil {
 			currentTrieNode = nextTrieNode;
 		} else {
+			//lock
 			currentTrieNode.children[Character(char)] = NewTrie()
 			currentTrieNode = currentTrieNode.children[Character(char)]
 		}

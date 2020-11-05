@@ -7,6 +7,7 @@ https://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_algorithm
 Additional changes to the algorithm have been made here to allow for concurrency.
  */
 
+/* Extract all of the KeyWords from a Trie. */
 func extractKeywords(t *trie.Trie, sentence string) []string {
 	matches := make([]string, 0)
 	currentTrie := t;
@@ -66,5 +67,10 @@ func (x Keywords) Add(w string) {
 func isWordBoundary(c trie.Character) bool {
 	return c == "" || c == " " || c == "\t" || c == "\n"
 }
+
+func checkIfMatch(t *trie.Trie, sentence string, idx int) (int, string) {
+
+}
+
 
 
